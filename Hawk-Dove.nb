@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[   3703828,      62006]
-NotebookOptionsPosition[   3691541,      61819]
-NotebookOutlinePosition[   3691880,      61834]
-CellTagsIndexPosition[   3691837,      61831]
+NotebookDataLength[   3704168,      62014]
+NotebookOptionsPosition[   3691784,      61826]
+NotebookOutlinePosition[   3692123,      61841]
+CellTagsIndexPosition[   3692080,      61838]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -52749,6 +52749,13 @@ Cell[BoxData[
    3.728123066422853*^9}},ExpressionUUID->"9011ced9-7d37-4547-aef2-\
 1e64d83ff52b"],
 
+Cell["\<\
+We introduce density-dependent competition into the fitness calculation\
+\>", "Text",
+ CellChangeTimes->{{3.7287113108769836`*^9, 
+  3.72871135473186*^9}},ExpressionUUID->"63d2dbc2-f757-403f-bf44-\
+8d054c03c27b"],
+
 Cell[BoxData[
  RowBox[{
   RowBox[{"fitness", "[", 
@@ -52904,13 +52911,13 @@ f4fa1fadcbcf"],
 
 Cell["\<\
 Population size is deterministic in this model: there is no ecological \
-stochasticity, and a single ecological attractor that determines population \
-size. Genetic stochasticity is taken into account with mutation and the \
+stochasticity, and a single ecological attractor determines population size. \
+Genetic stochasticity is taken into account with mutation and the \
 introduction of genetic drift (random choice of z gametes produced weighted \
 by individual fitness).\
 \>", "Text",
- CellChangeTimes->{{3.727502034109324*^9, 
-  3.727502236621805*^9}},ExpressionUUID->"9e04d3bc-71fa-4430-927b-\
+ CellChangeTimes->{{3.727502034109324*^9, 3.727502236621805*^9}, 
+   3.728711499701202*^9},ExpressionUUID->"9e04d3bc-71fa-4430-927b-\
 44712b50dc7b"],
 
 Cell[CellGroupData[{
@@ -61980,29 +61987,30 @@ Cell[CellGroupData[{
 Cell[3154189, 52700, 159, 3, 55, "Subsection",ExpressionUUID->"e883301e-2fdc-4d30-9162-0809ba6ba195"],
 Cell[3154351, 52705, 228, 5, 35, "Text",ExpressionUUID->"2b56de8b-909a-4f11-8f30-4d20844d09b8"],
 Cell[3154582, 52712, 1311, 37, 50, "Input",ExpressionUUID->"9011ced9-7d37-4547-aef2-1e64d83ff52b"],
-Cell[3155896, 52751, 1152, 26, 51, "Input",ExpressionUUID->"755ee122-02be-43d5-b3cc-8d14476f9488"],
-Cell[3157051, 52779, 185, 3, 35, "Text",ExpressionUUID->"bed633d0-3b1b-4057-ba92-b0e9fcf26869"],
-Cell[3157239, 52784, 417, 10, 31, "Input",ExpressionUUID->"a0312c65-b527-413e-a3c2-f5b3ef447b29"],
-Cell[3157659, 52796, 1310, 34, 123, "Input",ExpressionUUID->"9b911944-6070-4a11-8809-653c5d74fcf7"],
-Cell[3158972, 52832, 2833, 70, 170, "Input",ExpressionUUID->"8500a846-9b8b-4610-b005-f4fa1fadcbcf"],
-Cell[3161808, 52904, 476, 9, 35, "Text",ExpressionUUID->"9e04d3bc-71fa-4430-927b-44712b50dc7b"],
+Cell[3155896, 52751, 222, 5, 35, "Text",ExpressionUUID->"63d2dbc2-f757-403f-bf44-8d054c03c27b"],
+Cell[3156121, 52758, 1152, 26, 51, "Input",ExpressionUUID->"755ee122-02be-43d5-b3cc-8d14476f9488"],
+Cell[3157276, 52786, 185, 3, 35, "Text",ExpressionUUID->"bed633d0-3b1b-4057-ba92-b0e9fcf26869"],
+Cell[3157464, 52791, 417, 10, 31, "Input",ExpressionUUID->"a0312c65-b527-413e-a3c2-f5b3ef447b29"],
+Cell[3157884, 52803, 1310, 34, 123, "Input",ExpressionUUID->"9b911944-6070-4a11-8809-653c5d74fcf7"],
+Cell[3159197, 52839, 2833, 70, 170, "Input",ExpressionUUID->"8500a846-9b8b-4610-b005-f4fa1fadcbcf"],
+Cell[3162033, 52911, 494, 9, 35, "Text",ExpressionUUID->"9e04d3bc-71fa-4430-927b-44712b50dc7b"],
 Cell[CellGroupData[{
-Cell[3162309, 52917, 532, 11, 31, "Input",ExpressionUUID->"88f48a3e-d005-4a14-9e9f-8bf80d23ad6d"],
-Cell[3162844, 52930, 585, 11, 35, "Output",ExpressionUUID->"7752a0f2-d554-4eb7-9450-03baf2ac3ed9"]
+Cell[3162552, 52924, 532, 11, 31, "Input",ExpressionUUID->"88f48a3e-d005-4a14-9e9f-8bf80d23ad6d"],
+Cell[3163087, 52937, 585, 11, 35, "Output",ExpressionUUID->"7752a0f2-d554-4eb7-9450-03baf2ac3ed9"]
 }, Open  ]],
-Cell[3163444, 52944, 6950, 161, 266, "Input",ExpressionUUID->"056fcef4-141f-4a35-b0a8-a225f51cb823"],
+Cell[3163687, 52951, 6950, 161, 266, "Input",ExpressionUUID->"056fcef4-141f-4a35-b0a8-a225f51cb823"],
 Cell[CellGroupData[{
-Cell[3170419, 53109, 901, 20, 31, "Input",ExpressionUUID->"4855e6e7-4a68-45b9-9f13-052e1db8d76e"],
-Cell[3171323, 53131, 382700, 6292, 348, "Output",ExpressionUUID->"80d22d50-73a8-4474-93d9-8fecd38680dc"],
-Cell[3554026, 59425, 122510, 2030, 329, "Output",ExpressionUUID->"cb428364-10ab-4479-94e6-5dc042e78ab5"],
-Cell[3676539, 61457, 282, 7, 35, "Output",ExpressionUUID->"84fa6e4f-0960-4bd4-894a-76093dcda1c0"]
+Cell[3170662, 53116, 901, 20, 31, "Input",ExpressionUUID->"4855e6e7-4a68-45b9-9f13-052e1db8d76e"],
+Cell[3171566, 53138, 382700, 6292, 348, "Output",ExpressionUUID->"80d22d50-73a8-4474-93d9-8fecd38680dc"],
+Cell[3554269, 59432, 122510, 2030, 329, "Output",ExpressionUUID->"cb428364-10ab-4479-94e6-5dc042e78ab5"],
+Cell[3676782, 61464, 282, 7, 35, "Output",ExpressionUUID->"84fa6e4f-0960-4bd4-894a-76093dcda1c0"]
 }, Open  ]],
-Cell[3676836, 61467, 2437, 56, 101, "Input",ExpressionUUID->"f30eaa40-6a16-402a-9000-47fb4885262f"],
-Cell[3679276, 61525, 4471, 102, 157, "Input",ExpressionUUID->"c427a3f2-3160-4a47-9197-b4efc06e2ba0"],
-Cell[3683750, 61629, 490, 11, 31, "Input",ExpressionUUID->"fe9b9edf-1753-4a89-aeb1-654fae1fd62f"],
-Cell[3684243, 61642, 2749, 64, 101, "Input",ExpressionUUID->"41d88d93-f22a-4832-a961-d1f41eefd407"],
-Cell[3686995, 61708, 3943, 91, 132, "Input",ExpressionUUID->"4a32c74c-8d52-4ffb-8ec1-e5c8281651f0"],
-Cell[3690941, 61801, 536, 11, 31, "Input",ExpressionUUID->"9662e513-de75-4ab7-bdee-0557ddd2ba73"]
+Cell[3677079, 61474, 2437, 56, 101, "Input",ExpressionUUID->"f30eaa40-6a16-402a-9000-47fb4885262f"],
+Cell[3679519, 61532, 4471, 102, 157, "Input",ExpressionUUID->"c427a3f2-3160-4a47-9197-b4efc06e2ba0"],
+Cell[3683993, 61636, 490, 11, 31, "Input",ExpressionUUID->"fe9b9edf-1753-4a89-aeb1-654fae1fd62f"],
+Cell[3684486, 61649, 2749, 64, 101, "Input",ExpressionUUID->"41d88d93-f22a-4832-a961-d1f41eefd407"],
+Cell[3687238, 61715, 3943, 91, 132, "Input",ExpressionUUID->"4a32c74c-8d52-4ffb-8ec1-e5c8281651f0"],
+Cell[3691184, 61808, 536, 11, 31, "Input",ExpressionUUID->"9662e513-de75-4ab7-bdee-0557ddd2ba73"]
 }, Open  ]]
 }, Open  ]]
 }, Open  ]]
