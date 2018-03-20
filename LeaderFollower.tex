@@ -1,0 +1,161 @@
+\documentclass[a4paper]{article}
+
+\usepackage{fullpage} % Package to use full page
+\usepackage{parskip} % Package to tweak paragraph skipping
+\usepackage{tikz} % Package for drawing
+\usepackage{amsmath}
+\usepackage{hyperref}
+\usepackage{enumitem}
+\usepackage[bottom]{footmisc}
+
+
+\title{Modeling the dynamics of an institutionalized leading class in the context of collective action}
+\author{Claire Gu\'{e}rin}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+\section{Life cycle}
+\label{sec:lifcyc}
+
+I model the structural evolution of an initially non-complex (unstratified) human society. The population is constituted of N producers, who extract resources from the territory pertaining to the social group. An instance would be agriculturalist societies that grow food crops and rear animals for farming. Adults gather to solve collective action problems in order to improve extraction efficiency in the following generation (medium-term effect). Such actions would be typically exemplified by the construction of an irrigation system that would improve harvest yield for every producer. 
+
+During childhood, individuals in the population acquire two vertically transmissible cultural traits that are respectively expressed as two distinct social behaviors:
+
+\begin{enumerate}
+	\item social investment into a public good dedicated to the functioning of a common institution;
+	\item a personal preference for the modalities of public good allocation.
+\end{enumerate} 
+
+Individuals are attributed a lifetime temporal budget, which constrains a trade-off of time investment in different activities:
+
+\begin{itemize}
+	\item extracting resources
+	\item solving collective action problems
+\end{itemize}
+	
+Adults invest part of their own extracted resources into the public good, proportional to their social involvement (first behavioral trait). 
+Upon reach of adulthood, some individuals can be elected as leaders who are delegated to invest more time into solving collective action problems of their generation. The collective action problem specifically consists in reaching a consensus over deciding the proportions of public good that will be allocated to resources extraction efficiency and detection and sanctioning of cheaters respectively. Cheaters are individuals who exploit the system by benefiting from productivity enhancement, while investing few the public good.  
+
+The individual trait that determines budget allocation preferences is secondarily influenced by the preference of same-generation peers, which is differentially conveyed through social network and with success dependent on reputation. Hence, leaders have more chances of influencing individual preferences for public budget allocation. To compensate for their time budget sacrifice (resulting in a decreased resources extraction), leaders are entitled to ask for a portion the resources produced by non-leaders, in the form of taxes.
+
+Upon reach of consensus based on a time-dependent aggregation rule, individuals reproduce differentially as their lifetime reproductive success depends on their final resources.     
+
+\section{Election of leaders}
+\label{sec:elec}
+
+Let the population size be N. $n_L$ individuals are elected, explicitly or implicitly, by the whole population, in order to take on the role of political leaders in institution decisions \footnote{What determines an individual's election as leader? Are they randomly drawn from the population? Do they bear an intrinsic quality that render them more suitable for leadership cf body size in Tsimane'?}.
+Heritability of leadership? ie greater probability to be elected if parent elected (nepotism).
+
+\section{Resources production}
+\label{sec:prod}
+
+Every individual possesses the same time budget, which constrains a trade-off between individual production and group action. One invests a proportion $\tau_i$ of their total time budget into production, that is, extraction of natural resources. Productivity at the population level corresponds to the extraction rate of natural resources, which increases as a function of technology $\nabla$ available at time t. This available technology is cumulative and results from the previous generations' public good resources dedicated to innovations for productivity enhancement. The amount of extracted resources, or productivity, depends on the extraction rate $\beta$ pertaining to the society's technological means. Thus, $\beta$ follows a law of diminishing marginal returns as a function of the aforementioned technological resources. Technology therefore governs the extraction rate of natural resources such as:
+
+\begin{equation}
+\beta = f(\nabla)
+\end{equation}
+ 
+Where $f$ is an increasing function of $\nabla$ (fig. \ref{fig:betafunc}) and $0\leq\beta\leq1$.
+
+\begin{figure}[!htbp]
+	\begin{center}
+		\begin{tikzpicture}
+		\draw[domain=0:4, color=lightgray, thick] plot (\x,{2.5*0.1*exp(2*\x)/(2.5+0.1*(exp(2*\x)-1))}); 
+		\draw [thick, ->] (0,0) -- (4,0) node [right] {technology $\nabla$};
+		\draw [thick, ->] (0,0) -- (0,3) node [above] {productivity $\beta$};
+		\end{tikzpicture}
+	\end{center}
+	\caption{Diminishing returns of extraction rate with increasing technology.}
+	\label{fig:betafunc}
+\end{figure} 
+
+Let the natural resources available for extraction within the population's territory $\Omega$ be very large, and the per-capita amount of resources obtained after extraction:
+
+\begin{equation} \label{eq:resources}
+	R_i = \tau_i\cdot\frac{\beta(\nabla)\cdot\Omega}{N}
+\end{equation}
+
+\section{Collective action}
+\label{sec:collact}
+
+Individuals in the population all participate to the maintenance of an institution, whose role is to apply collective actions in relation to productivity maximization. Two distinct cultural traits $x$ and $y$ borne by every individual in the population respectively determine (i) degree of involvement into the institution and (ii) personal preferences as for public good resources management.     
+
+Involvement into the collective action incur individual costs in terms of resources and time. $x$ measures to proportion of own resources that one invests into the institution. The sum of all investments across the population amounts to the public good $P$. 
+
+\begin{equation} \label{eq:pubgood}
+P = \sum_{i=1}^{N}x_i\cdot R_i
+\end{equation}
+
+$P$ can be used for different purposes: increasing the level of acquired technology from the previous generations $\nabla_{t-1}$ through innovations enhancing extraction rate of natural resources; detecting and sanctioning cheaters. Cheaters are individuals in the social group who benefit from the enhanced productivity at the population level thanks to the investment into innovations from previous generations, but do not invest as much of their own resources into the current generation's public good as their peers do. Cheaters are therefore defined according to the current's generation distribution of $x$ values: they are the individuals who invest less than a predefined quartile of $X$ distribution in the population \footnote{Should $q$ \textit{i.e.} level of tolerance to cheaters / quartile change over time e.g. $25\%\to15\%$?}:
+
+\begin{equation} \label{eq:cheat}
+x_{cheater}\leq Q_q(X)
+\end{equation}
+
+Individuals express a personal preference for the repartition of public good resources into innovations on one hand and cheaters detection and sanctioning on the other hand. This preference is defined as the proportion $y$ of the public good an individual would like to see allocated for the detection and sanction of cheaters. After deliberation, I assume that a consensus is reached over the actual proportion $h$ of public good dedicated to the detection and sanctioning of cheaters \footnote{Is there always a consensus reached or can the collective action fail overall due to too large differences in individual preferences? c.f. Simon's paper on leadership.}. The proportion of time $\chi$ required to reach a consensus is a cost incurred equally to every individual in the population, as the time $\tau$ one can allocate to personal production of resources $R_i$ is: 
+
+\begin{equation}
+\tau=1-\chi
+\end{equation}
+
+I formalize $\chi$ as a function of the population size $N$, the variance of personal preferences in the population $\sigma_Y$ and the number of leaders in the population $n_L$:
+
+\begin{equation}
+\chi = \phi(N,\sigma_X,n_L)
+\end{equation}  
+
+So that $0\leq\chi\leq1$. $\phi$ is an increasing function of both $N$ (\textit{i.e.} the number of voices) and $\sigma_Y$ (\textit{i.e.} the breadth of opinions on public good allocation), but decreases with leadership support, such as $\frac{\delta \phi}{\delta N}$ and $\frac{\delta \phi}{\delta \sigma_Y} > 0$ and $\frac{\delta \phi}{\delta n_L} < 0$.
+
+Once reached, the consensus follows an aggregation rule. For now, I use the mean individual preference in the population to calculate the effective portion of public good dedicated to detection and sanctioning of cheaters:
+
+\begin{equation}
+h=\frac{1}{N} \sum_{i=1}^{N}y_i
+\end{equation}
+
+As a consequence, the increase in technology in the next generation, determined by the amount of public good of the current generation invested in finding and establishing an innovation \footnote{innovations are relatively rare, hence we might want to use a Poisson distribution in order to formalize the probability that a new technology improving resources extraction is found.}, is as follows:
+
+\begin{equation}
+\nabla_{t+1}=\nabla_t + g[(1-h)\cdot P]
+\end{equation}
+
+Where g is a saturating function of resources invested in ``research and development''. Technology governs the extraction rate of natural resources such as described in section \ref{sec:prod}.
+
+\begin{figure}[!htbp]
+	\begin{center}
+		\begin{tikzpicture}
+		\draw[domain=0:5, color=lightgray, thick] plot (\x,{0.6*\x/(0.1+0.2*\x)}); 
+		\draw [thick, ->] (0,0) -- (5,0) node [right] {investment $(1-h)\cdot P$};
+		\draw [thick, ->] (0,0) -- (0,3) node [above] {innovation $g$};
+		\end{tikzpicture}
+	\end{center}
+	\caption{Increase of technology level with investment of public good.}
+	\label{fig:techfunc}
+\end{figure} 
+
+\section{Detection and punishment of cheaters}
+\label{sec:cheat}
+
+In this model, I assume that there is no false detection, meaning that the individuals detected and sanctioned are effective cheaters as defined by equation \ref{eq:cheat}. The individual payoff is therefore:
+
+\begin{equation}
+\pi_i=\delta\cdot R_i+(1-\delta)\cdot[\kappa\cdot(R_i\cdot(1-f)-F)+(1-\kappa)\cdot R_i] 
+\end{equation}
+
+Where $\kappa$ describes the institutional quality. In other words, it is the probability for a cheater to be detected.
+ 
+\section{Cultural transmission}
+\label{sec:trans}
+
+
+\section{Reproduction}
+\label{sec:repro}
+
+Total final resources of an individual is $\rho$. 
+We assume clonal reproduction and ``haploidy'' for cultural traits. Non overlapping generations, discrete time.
+
+%\bibliographystyle{plain}
+%\bibliography{bibliography.bib}
+\end{document}
