@@ -41,13 +41,13 @@ Upon reach of adulthood, some individuals can be elected as leaders who are dele
 
 The individual trait that determines budget allocation preferences is secondarily influenced by the preference of same-generation peers, which is differentially conveyed through social network and with success dependent on reputation. Hence, leaders have more chances of influencing individual preferences for public budget allocation. To compensate for their time budget sacrifice (resulting in a decreased resources extraction), leaders are entitled to ask for a portion the resources produced by non-leaders, in the form of taxes.
 
-Upon reach of consensus based on a time-dependent aggregation rule, individuals reproduce differentially as their lifetime reproductive success depends on their final resources.     
+Upon reach of consensus based on a time-dependent aggregation rule, individuals reproduce differentially as their lifetime reproductive success depends on their final resources. Reproduction is clonal, with non-overlapping generations characterized by discrete time.     
 
 \section{Election of leaders}
 \label{sec:elec}
 
 Let the population size be N. $n_L$ individuals are elected, explicitly or implicitly, by the whole population, in order to take on the role of political leaders in institution decisions \footnote{What determines an individual's election as leader? Are they randomly drawn from the population? Do they bear an intrinsic quality that render them more suitable for leadership cf body size in Tsimane'?}.
-Heritability of leadership? ie greater probability to be elected if parent elected (nepotism).
+Heritability of leadership = greater probability to be elected if parent elected (nepotism)?
 
 \section{Resources production}
 \label{sec:prod}
@@ -150,34 +150,59 @@ Where $\omega$ is a decreasing function of $N$ but an increasing function of $P$
 F=h\cdot P\left(1-k\right)
 \end{equation}
 
-$F$ can be viewed as a fine imposed on detected cheaters by the institution. Additionally, detected cheaters are coerced into returning part of their resources to the public good. This portion corresponds to the mean portion $\bar{x}$ of resources invested into the public good by each individual in the population \footnote{For now, the average $x$ value in the population is assumed to be accurately assessed. However, one could imagine that there is a possibility of estimation error, leading to over or underestimation of $\bar{x}$.}. This allows me to write the payoff for each individual $i$ from each social class $j\in$ \{producer, leader\} as:
+$F$ can be viewed as a fine imposed on detected cheaters by the institution. Additionally, detected cheaters are coerced into returning part of their resources to the public good. This portion corresponds to the difference between wthe porption of resources invested by the cheater and the mean portion $\bar{x}$ of resources invested by each individual in the population into the public good \footnote{For now, the average $x$ value in the population is assumed to be accurately assessed. However, one could imagine that there is a possibility of estimation error, leading to over or underestimation of $\bar{x}$.}. This allows me to write the payoff for each individual $i$ from each social class $j\in$ \{producer, leader\} as:
 
 \begin{equation}
-\pi_{i,j}=\delta\cdot R_i+\left(1-\delta\right)\left[\kappa\left(R_i\left(1-\bar{x}\right)-\frac{F}{\kappa\left(1-\delta\right)N}\right)+\left(1-\kappa\right)\cdot R_i\right] 
+\pi_{i,j}=\delta\cdot(1-x_i)\cdot R_i+\left(1-\delta\right)\left[\kappa\left(R_i\left(1-\bar{x}+x_i\right)-\frac{F}{\kappa\left(1-\delta\right)N}\right)+\left(1-\kappa\right)\cdot(1-x_i)R_i\right] 
 \end{equation}
 
 \section{Cultural transmission}
 \label{sec:trans}
 
-for now, assume only norm followers. Later: only rational players, then both.
+This model aims to explore the evolutionary dynamics of two cultural traits. The transmission modes of each trait are described in the following sections and synthesized in figure \ref{fig:cultrans}. I assume that individuals are norm followers, in that their strategies quantified by $x$ and $y$ values are both independent of their payoff \footnote{Later on, I will try to compare with a model considering that every player is rational, and then combine both norm followers and rational individuals.}. 
+
+\subsection{Investment in institution}
+
+$x$ is the proportion of its own resources an individual is willing to invest into institutions. This cultural trait is vertically transmitted, acquired directly from the parent $x$ value with probability $d^x$. There is a chance $1-d^x$ for social transmission not be direct, in which case the focal subject is randomly socialized by any other individual from the parental generation.
+
+\subsection{Policing preference}
+
+$y$ is the personal preference of an individual for the proportion of public good that should be dedicated to policing. This trait is initially vertically transmitted in a similar manner as trait $x$, with a probability $d^y$ for direct transmission and $1-d^y$ for socialization by another individual from the parental generation. However, upon reach of adulthood, individuals might be subject to social influence from peers, with elected leaders having more impact than others. Thus there is a probability $d^II$ that the individual is secondarily socialized by a leader or a producer, chosen semi-randomly within the population, with leaders $m$ times more likely to secondarily influence individuals through say, media for instance.  
+
+\begin{figure}[!htbp]
+	\begin{center}
+		\begin{tikzpicture} 
+		\draw [thick, ->] (0,0) -- (0,-2) node [below] {$x$};
+		\draw [thick, ->] (2,0) -- (2,-2) node [below] {$y$};
+		\end{tikzpicture}
+	\end{center}
+	\caption{Transmission modes of the two cultural traits level of investment in institution $x$ and policing preference $y$.}
+	\label{fig:cultrans}
+\end{figure} 
 
 \section{Reproduction}
 \label{sec:repro}
 
-Leaders are assumed to be politically trustworthy in the sense that they effectively dedicate a greater portion of their own time to solving collective action problems, in order to decrease the total time necessary to reach a consensus, and thus enable producers to dedicate more of their own time to natural resources extraction. However, I postulate that individuals have an acute sense of fairness, which implies that leaders will only take on their role if they obtain a final wealth at least equal to the final resources of non-leaders. Hence, if per-capita leader and producer income is $R_L$ and $R_P$ respectively, the condition for leaders to agree upon sacrificing more of their valuable time than others is $R_L\ge R_P$. In order to fulfill this condition and thus alleviate the extra-burden that they endure as leaders, elected individuals are entitled to levy taxes, which are formalized as the transfer of a proportion $\alpha$ of producer resources to leaders. Assuming further that leaders do not exploit producers (supposing for example that despots would be automatically exposed and overthrown by the population), I can write:
+Leaders are assumed to be politically trustworthy in the sense that they effectively dedicate a greater portion of their own time to solving collective action problems, in order to decrease the total time necessary to reach a consensus, and thus enable producers to dedicate more of their own time to natural resources extraction. However, I postulate that individuals have an acute sense of fairness, which implies that leaders will only take on their role if they obtain a final wealth at least equal to the final resources of non-leaders. Hence, if per-capita leader and producer income is $\rho_L$ and $\rho_P$ respectively, the condition for leaders to agree upon sacrificing more of their valuable time than others is $\rho_L\ge \rho_P$. In order to fulfill this condition and thus alleviate the extra-burden that they endure as leaders, elected individuals are entitled to levy taxes, which are formalized as the transfer of a proportion $\alpha$ of producer resources to leaders. Assuming further that leaders do not exploit producers (supposing for example that despots would be automatically exposed and overthrown by the population), I can write:
 
 \begin{equation}
 \begin{aligned}
-\frac{\sum_{i=1}^{n_P}(1-\alpha)\pi_{i,P}}{n_P} &= \frac{\frac{\sum_{i=1}^{n_P}\alpha\pi_{i,P}}{n_L}+\sum_{i=1}^{n_L}\pi_{i,L}}{n_L}\\
+\rho_P = \rho_L \Leftrightarrow\frac{\sum_{i=1}^{n_P}(1-\alpha)\pi_{i,P}}{n_P} &= \frac{\frac{\sum_{i=1}^{n_P}\alpha\pi_{i,P}}{n_L}+\sum_{i=1}^{n_L}\pi_{i,L}}{n_L}\\
 n_L^2 \sum_{i=1}^{n_P}(1-\alpha)\pi_{i,P} &= n_P\left(\sum_{i=1}^{n_P}(\alpha\pi_{i,P}) + \sum_{i=1}^{n_L}(\pi_{i,L})\right)\\
 \alpha &= \frac{n_L\left(n_L\Pi_P+n_P\Pi_L\right)}{\Pi_P\left(n_p+n_L^2\right)}
 \end{aligned}
 \end{equation}   
 
-Where $\Pi_j=\sum_{i=1}^{n_j}\pi_{i,j}$.
+Where $\Pi_j=\sum_{i=1}^{n_j}\pi_{i,j}$. Individual final resources determine lifetime reproductive success $W_{i,j}$. I assume that collected taxes are equally shared between leaders. There is intra-class competition for resources, characterized by the terms $\gamma_L$ and $\gamma_R$.
 
-Total final resources of an individual is $\rho$. 
-We assume clonal reproduction and ``haploidy'' for cultural traits. Non overlapping generations, discrete time.
+\begin{equation}
+\begin{cases}
+W_{i,L}=\frac{r_L+\pi_{i,L}+\frac{\alpha\Pi_P}{n_L}}{1+\gamma_L n_L}\\
+W_{i,P}=\frac{r_P+(1-\alpha)\pi_{i,P}}{1+\gamma_P n_P}
+\end{cases}
+\end{equation}
+
+$r_L$ and $r_P$ correspond to the basic resources of each class, in absence of intra-class competition ($\gamma_j=0$).
 
 %\bibliographystyle{plain}
 %\bibliography{bibliography.bib}
