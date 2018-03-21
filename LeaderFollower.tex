@@ -7,6 +7,8 @@
 \usepackage{hyperref}
 \usepackage{enumitem}
 \usepackage[bottom]{footmisc}
+\usepackage{caption}
+\usepackage{subcaption}
 
 
 \title{Modeling the dynamics of an institutionalized leading class in the context of collective action}
@@ -170,13 +172,22 @@ $x$ is the proportion of its own resources an individual is willing to invest in
 $y$ is the personal preference of an individual for the proportion of public good that should be dedicated to policing. This trait is initially vertically transmitted in a similar manner as trait $x$, with a probability $d^y$ for direct transmission and $1-d^y$ for socialization by another individual from the parental generation. However, upon reach of adulthood, individuals might be subject to social influence from peers, with elected leaders having more impact than others. Thus there is a probability $d^II$ that the individual is secondarily socialized by a leader or a producer, chosen semi-randomly within the population, with leaders $m$ times more likely to secondarily influence individuals through say, media for instance.  
 
 \begin{figure}[!htbp]
-	\begin{center}
-		\begin{tikzpicture} 
-		\draw [thick, ->] (0,0) -- (0,-2) node [below] {$x$};
-		\draw [thick, ->] (2,0) -- (2,-2) node [below] {$y$};
-		\end{tikzpicture}
-	\end{center}
-	\caption{Transmission modes of the two cultural traits level of investment in institution $x$ and policing preference $y$.}
+	\centering
+	\begin{subfigure}{.5\textwidth}
+		\centering
+		\captionsetup{width=.9\linewidth}
+		\includegraphics[width=.9\linewidth]{xTransmission.pdf}
+		\caption{Vertical transmission of the cultural trait $x$, measuring the individual resources investment level in institutional.}
+		\label{fig:xtrans}
+	\end{subfigure}%
+	\begin{subfigure}{.5\textwidth}
+		\centering
+		\captionsetup{width=.9\linewidth}
+		\includegraphics[width=.9\linewidth]{yTransmission.pdf}
+		\caption{Transmission steps of the cultural trait $y$, measuring personal policing preference. Vertical primary transmission followed by secondary horizontal socialization, \textit{i.e.} from peers.}
+		\label{fig:ytrans}
+	\end{subfigure}
+	\caption{Differential transmission modes of the two cultural traits studied in the model}
 	\label{fig:cultrans}
 \end{figure} 
 
