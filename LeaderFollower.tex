@@ -46,7 +46,7 @@ Upon reach of consensus based on a time-dependent aggregation rule, individuals 
 \section{Election of leaders}
 \label{sec:elec}
 
-Let the population size be N. $n_L$ individuals are elected, explicitly or implicitly, by the whole population, in order to take on the role of political leaders in institution decisions \footnote{What determines an individual's election as leader? Are they randomly drawn from the population? Do they bear an intrinsic quality that render them more suitable for leadership cf body size in Tsimane'?}.
+Let the population size be N. Every generation, $n_L$ individuals are elected by the whole population, in order to take on the role of political leaders in institution decisions \footnote{What determines an individual's election as leader? Are they randomly drawn from the population? Do they bear an intrinsic quality that render them more suitable for leadership cf body size in Tsimane'?}. I use the term election in a broad sense, as leaders can be chosen explicitly through official vote or implicitly as tacit agreement among social members of the population. 
 Heritability of leadership = greater probability to be elected if parent elected (nepotism)?
 
 \section{Resources production}
@@ -89,10 +89,10 @@ Involvement into the collective action incur individual costs in terms of resour
 P = \sum_{i=1}^{N}x_i\cdot R_i
 \end{equation}
 
-$P$ can be used for different purposes: increasing the level of acquired technology from the previous generations $\nabla_{t-1}$ through innovations enhancing extraction rate of natural resources; detecting and sanctioning cheaters. Cheaters are individuals in the social group who benefit from the enhanced productivity at the population level thanks to the investment into innovations from previous generations, but do not invest as much of their own resources into the current generation's public good as their peers do. Cheaters are therefore defined according to the current's generation distribution of $x$ values: they are the individuals who invest less than a predefined quartile of $X$ distribution in the population \footnote{Should $q$ \textit{i.e.} level of tolerance to cheaters / quartile change over time e.g. $25\%\to15\%$?}:
+$P$ can be used for different purposes: increasing the level of acquired technology from the previous generations $\nabla_{t-1}$ through innovations enhancing extraction rate of natural resources; detecting and sanctioning cheaters. Cheaters are individuals in the social group who benefit from the enhanced productivity at the population level thanks to the investment into innovations from previous generations, but do not invest as much of their own resources into the current generation's public good as their peers do. Cheaters are therefore defined according to the current's generation distribution of $x$ values: they are the individuals who invest less than a predefined quartile of $X$ distribution in the population \footnote{Should $q$ \textit{i.e.} level of tolerance to cheaters / quartile change over time e.g. $25\%\to15\%$?}. Hence, I can write the proportion $\delta$ of honest individuals in the population as:
 
 \begin{equation} \label{eq:cheat}
-x_{cheater}\leq Q_q\left(X\right)
+\delta=1-p(x\le Q_q\left(X\right))
 \end{equation}
 
 Individuals express a personal preference for the repartition of public good resources into innovations on one hand and cheaters detection and sanctioning on the other hand. This preference is defined as the proportion $y$ of the public good an individual would like to see allocated for the detection and sanction of cheaters. After deliberation, I assume that a consensus is reached over the actual proportion $h$ of public good dedicated to the detection and sanctioning of cheaters \footnote{Is there always a consensus reached or can the collective action fail overall due to too large differences in individual preferences? c.f. Simon's paper on leadership.}. The proportion of time $\chi$ required to reach a consensus is a cost incurred equally to every individual in the population, as the proportion of time $\tau$ one can allocate to personal production of resources $R_i$ is: 
@@ -150,7 +150,7 @@ Where $\omega$ is a decreasing function of $N$ but an increasing function of $P$
 F=h\cdot P\left(1-k\right)
 \end{equation}
 
-$F$ can be viewed as a fine imposed on detected cheaters by the institution. Additionally, detected cheaters are coerced into returning part of their resources to the public good. This portion corresponds to the difference between wthe porption of resources invested by the cheater and the mean portion $\bar{x}$ of resources invested by each individual in the population into the public good \footnote{For now, the average $x$ value in the population is assumed to be accurately assessed. However, one could imagine that there is a possibility of estimation error, leading to over or underestimation of $\bar{x}$.}. This allows me to write the payoff for each individual $i$ from each social class $j\in$ \{producer, leader\} as:
+$F$ can be viewed as a fine imposed on detected cheaters by the institution. Additionally, detected cheaters are coerced into returning part of their resources to the public good. This portion corresponds to the difference between wthe porption of resources invested by the cheater and the mean portion $\bar{x}$ of resources invested by each individual in the population into the public good \footnote{For now, the average $x$ value in the population is assumed to be accurately assessed. However, one could imagine that there is a possibility of estimation error, leading to an over- or underestimation of $\bar{x}$.}. This allows me to write the payoff for each individual $i$ from each social class $j\in$ \{producer, leader\} as:
 
 \begin{equation}
 \pi_{i,j}=\delta\cdot(1-x_i)\cdot R_i+\left(1-\delta\right)\left[\kappa\left(R_i\left(1-\bar{x}+x_i\right)-\frac{F}{\kappa\left(1-\delta\right)N}\right)+\left(1-\kappa\right)\cdot(1-x_i)R_i\right] 
