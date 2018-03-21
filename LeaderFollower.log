@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2018.1.18)  21 MAR 2018 12:22
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2018.1.18)  21 MAR 2018 20:34
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -636,41 +636,53 @@ LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
 
 pdfTeX warning: /usr/bin/pdflatex (file ./xTransmission.pdf): PDF inclusion: fo
 und PDF version <1.7>, but at most version <1.5> allowed
-<xTransmission.pdf, id=111, 614.295pt x 794.97pt>
+<xTransmission.pdf, id=120, 614.295pt x 794.97pt>
 File: xTransmission.pdf Graphic file (type pdf)
  <use xTransmission.pdf>
-Package pdftex.def Info: xTransmission.pdf used on input line 179.
+Package pdftex.def Info: xTransmission.pdf used on input line 209.
 (pdftex.def)             Requested size: 203.83417pt x 263.78441pt.
 
 
 pdfTeX warning: /usr/bin/pdflatex (file ./yTransmission.pdf): PDF inclusion: fo
 und PDF version <1.7>, but at most version <1.5> allowed
-<yTransmission.pdf, id=112, 614.295pt x 794.97pt>
+<yTransmission.pdf, id=121, 614.295pt x 794.97pt>
 File: yTransmission.pdf Graphic file (type pdf)
  <use yTransmission.pdf>
-Package pdftex.def Info: yTransmission.pdf used on input line 186.
+Package pdftex.def Info: yTransmission.pdf used on input line 216.
 (pdftex.def)             Requested size: 203.83417pt x 263.78441pt.
 
-[5 <./xTransmission.pdf> <./yTransmission.pdf>] [6]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 220.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 220.
+[5] [6 <./xTransmission.pdf> <./yTransmission.pdf>] [7]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 263.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 263.
  (./LeaderFollower.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 220.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 220.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 263.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 263.
 Package rerunfilecheck Info: File `LeaderFollower.out' has not changed.
-(rerunfilecheck)             Checksum: 42BB335AADF53B6FB878C56E397D6D3A;522.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 220.
+(rerunfilecheck)             Checksum: 5DB75ED2068EAF15E1E0EA8E75100797;580.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 263.
  ) 
 Here is how much of TeX's memory you used:
- 17265 strings out of 493029
- 324537 string characters out of 6136234
- 387570 words of memory out of 5000000
- 20487 multiletter control sequences out of 15000+600000
+ 17332 strings out of 493029
+ 325795 string characters out of 6136234
+ 389722 words of memory out of 5000000
+ 20543 multiletter control sequences out of 15000+600000
  10895 words of font info for 39 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 55i,9n,54p,1178b,695s stack positions out of 5000i,500n,10000p,200000b,80000s
-pdfTeX warning (dest): name{Hfootnote.7} has been referenced but does not exi
-st, replaced by a fixed one
+ 55i,9n,54p,1255b,696s stack positions out of 5000i,500n,10000p,200000b,80000s
+pdfTeX warning (dest): name{Hfootnote.11} has been referenced but does not ex
+ist, replaced by a fixed one
+
+pdfTeX warning (dest): name{Hfootnote.10} has been referenced but does not exis
+t, replaced by a fixed one
+
+pdfTeX warning (dest): name{Hfootnote.9} has been referenced but does not exist
+, replaced by a fixed one
+
+pdfTeX warning (dest): name{Hfootnote.8} has been referenced but does not exist
+, replaced by a fixed one
+
+pdfTeX warning (dest): name{Hfootnote.7} has been referenced but does not exist
+, replaced by a fixed one
 
 pdfTeX warning (dest): name{Hfootnote.6} has been referenced but does not exist
 , replaced by a fixed one
@@ -711,10 +723,10 @@ public/amsfonts/cm/cmsy8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/
 amsfonts/cm/cmti10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfon
 ts/cm/cmti8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/c
 mti9.pfb>
-Output written on LeaderFollower.pdf (6 pages, 531598 bytes).
+Output written on LeaderFollower.pdf (7 pages, 541200 bytes).
 PDF statistics:
- 267 PDF objects out of 1000 (max. 8388607)
- 183 compressed objects within 2 object streams
- 41 named destinations out of 1000 (max. 500000)
- 95 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 294 PDF objects out of 1000 (max. 8388607)
+ 208 compressed objects within 3 object streams
+ 52 named destinations out of 1000 (max. 500000)
+ 103 words of extra memory for PDF output out of 10000 (max. 10000000)
 

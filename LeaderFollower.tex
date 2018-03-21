@@ -27,8 +27,8 @@ I model the structural evolution of an initially non-complex (unstratified) huma
 During childhood, individuals in the population acquire two vertically transmissible cultural traits that are respectively expressed as two distinct social behaviors:
 
 \begin{enumerate}
-	\item social investment into a public good dedicated to the functioning of a common institution;
-	\item a personal preference for the modalities of public good allocation.
+	\item personal investment into a public good dedicated to the functioning of a common institution;
+	\item personal preference for the modalities of public good allocation.
 \end{enumerate} 
 
 Individuals are attributed a lifetime temporal budget, which constrains a trade-off of time investment in different activities:
@@ -45,11 +45,39 @@ The individual trait that determines budget allocation preferences is secondaril
 
 Upon reach of consensus based on a time-dependent aggregation rule, individuals reproduce differentially as their lifetime reproductive success depends on their final resources. Reproduction is clonal, with non-overlapping generations characterized by discrete time.     
 
-\section{Election of leaders}
+\section{Social class dynamics}
 \label{sec:elec}
 
-Let the population size be N. Every generation, $n_L$ individuals are elected by the whole population, in order to take on the role of political leaders in institution decisions \footnote{What determines an individual's election as leader? Are they randomly drawn from the population? Do they bear an intrinsic quality that render them more suitable for leadership cf body size in Tsimane'?}. I use the term election in a broad sense, as leaders can be chosen explicitly through official vote or implicitly as tacit agreement among social members of the population. 
-Heritability of leadership = greater probability to be elected if parent elected (nepotism)?
+Let the population size at time $t$ be $N^t$. At every generation, a proportion $\lambda$ of individuals are elected in order to take on the role of political leaders in institution decisions. I use the term election in a broad sense, as leaders can be chosen explicitly through official vote or implicitly as tacit agreement among social members of the population \footnote{What determines an individual's probability to be elected? Do they bear an intrinsic quality that renders them more suitable for leadership? cf Tsimane': body size, social connections, generosity, etc.}. 
+In this model, leaders are randomly drawn from the population at each generation \footnote{Heritability of leadership = greater probability to be elected if parent was leader (nepotism)?}.
+The total population size $N^t$ amounts to the number of leaders and producers at time $t$, $n_L^t$ and $n_P^t$ respectively. At the next generation, I have:
+
+\begin{equation}
+	\begin{cases}
+	n_L^{t+1}=\lambda\left[n_L^t\cdot w(n_L^t)+n_P^t\cdot w(n_P^t)\right]\\
+	n_P^{t+1}=(1-\lambda)\left[n_L^t\cdot w(n_L^t)+n_P^t\cdot w(n_P^t)\right]
+	\end{cases}
+\end{equation}
+
+Were $w$ corresponds to fitness estimated by lifetime reproductive success. $\lambda$ is not constant but a variable that changes over time. Indeed, I assume that the proportion of leaders in the population are an informed choice from the people based on leadership efficiency in the direct previous generation (parental, fig. \ref{fig:lambda}) \footnote{NB: here the figure implies that if there no increase in fitness as a consequence of leadership, half of the population will be elected in the next generation, which is unlikely: function parameters obviously need to be tuned, and the graph is uniquely shown for illustrative purposes, which stands true for every figure in this document.}. Leadership efficiency is accurately estimated by $\Delta\bar{w}$, the difference between realized average fitness of parents, $\bar{w_\text{eff}}$, and predicted mean reproductive success in the absence of leaders, $\bar{w_0}$ \footnote{I feel like there should be some kind of correction in this formula, but how exactly?}. Both information are supposed to be accessible to the population. $\Delta\bar{w}$ can be viewed as the popular degree of satisfaction with regards to leadership efficiency, and is formalized as:
+
+\begin{equation}
+	\Delta\bar{w}=\overline{w_\text{eff}}-\overline{w_0}
+\end{equation}   
+
+\begin{figure}[!htbp]
+	\begin{center}
+		\begin{tikzpicture}
+		\draw[domain=-4:4, color=lightgray, thick] plot (\x,{2/(1+exp(-\x))}); 
+		\draw [thick, ->] (-4,0) -- (4,0) node [right] {$\Delta \bar{w}$};
+		\draw [thick, ->] (0,0) -- (0,2.5) node [above] {$\lambda^{t+1}$};
+		\draw [dashed] (-4,2) -- (4,2) node[pos=0.47, above] {$1$};
+		\node at (0,2) {\textbullet};
+		\end{tikzpicture}
+	\end{center}
+	\caption{Increasing proportion of elected leaders in the population as average fitness increases as a consequence of leadership.}
+	\label{fig:lambda}
+\end{figure} 
 
 \section{Resources production}
 \label{sec:prod}
@@ -60,7 +88,7 @@ Every individual possesses the same time budget, which constrains a trade-off be
 \beta = f\left(\nabla\right)
 \end{equation}
  
-Where $f$ is an increasing function of $\nabla$ (fig. \ref{fig:betafunc}) and $0\leq\beta\leq1$.
+Where $f$ is an increasing function of $\nabla$ (fig. \ref{fig:betafunc}) and $0\le\beta\le1$.
 
 \begin{figure}[!htbp]
 	\begin{center}
@@ -68,6 +96,7 @@ Where $f$ is an increasing function of $\nabla$ (fig. \ref{fig:betafunc}) and $0
 		\draw[domain=0:4, color=lightgray, thick] plot (\x,{2.5*0.1*exp(2*\x)/(2.5+0.1*(exp(2*\x)-1))}); 
 		\draw [thick, ->] (0,0) -- (4,0) node [right] {technology $\nabla$};
 		\draw [thick, ->] (0,0) -- (0,3) node [above] {productivity $\beta$};
+		\draw [dashed] (0,2.5) -- (4,2.5) node[pos=-0.07] {$1$};
 		\end{tikzpicture}
 	\end{center}
 	\caption{Diminishing returns of extraction rate with increasing technology.}
@@ -109,7 +138,7 @@ I formalize $\chi$ as a function of the population size $N$, the variance of per
 \chi = \phi\left(N,\sigma_X,n_L\right)
 \end{equation}  
 
-So that $0\leq\chi\leq1$. $\phi$ is an increasing function of both $N$ (\textit{i.e.} the number of voices) and $\sigma_Y$ (\textit{i.e.} the breadth of opinions on public good allocation), but decreases with leadership support, such as $\frac{\delta \phi}{\delta N}$ and $\frac{\delta \phi}{\delta \sigma_Y} > 0$ and $\frac{\delta \phi}{\delta n_L} < 0$.
+So that $0\le\chi\le1$. $\phi$ is an increasing function of both $N$ (\textit{i.e.} the number of voices) and $\sigma_Y$ (\textit{i.e.} the breadth of opinions on public good allocation), but decreases with leadership support, such as $\frac{\partial\phi}{\partial N}$ and $\frac{\partial\phi}{\partial\sigma_Y}>0$ and $\frac{\partial\phi}{\partial n_L}<0$.
 
 Once reached, the consensus follows an aggregation rule. For now, I use the mean individual preference in the population to calculate the effective portion of public good dedicated to detection and sanctioning of cheaters:
 
@@ -131,6 +160,7 @@ Where g is a saturating function of resources invested in ``research and develop
 		\draw[domain=0:5, color=lightgray, thick] plot (\x,{0.6*\x/(0.1+0.2*\x)}); 
 		\draw [thick, ->] (0,0) -- (5,0) node [right] {investment $(1-h)\cdot P$};
 		\draw [thick, ->] (0,0) -- (0,3) node [above] {innovation $g$};
+		\draw [dashed] (0,2.8) -- (5,2.8) node[pos=-0.1] {$max_g$};
 		\end{tikzpicture}
 	\end{center}
 	\caption{Increase of technology level with investment of public good.}
@@ -152,7 +182,7 @@ Where $\omega$ is a decreasing function of $N$ but an increasing function of $P$
 F=h\cdot P\left(1-k\right)
 \end{equation}
 
-$F$ can be viewed as a fine imposed on detected cheaters by the institution. Additionally, detected cheaters are coerced into returning part of their resources to the public good. This portion corresponds to the difference between wthe porption of resources invested by the cheater and the mean portion $\bar{x}$ of resources invested by each individual in the population into the public good \footnote{For now, the average $x$ value in the population is assumed to be accurately assessed. However, one could imagine that there is a possibility of estimation error, leading to an over- or underestimation of $\bar{x}$.}. This allows me to write the payoff for each individual $i$ from each social class $j\in$ \{producer, leader\} as:
+$F$ can be viewed as a fine imposed on detected cheaters by the institution. Additionally, detected cheaters are coerced into returning part of their resources to the public good. This portion corresponds to the difference between wthe porption of resources invested by the cheater and the mean portion $\bar{x}$ of resources invested by each individual in the population into the public good \footnote{For now, the average $x$ value in the population is assumed to be accurately assessed. However, one could imagine that there is a possibility of estimation error, leading to an over- or underestimation of $\bar{x}$.}. This allows me to write the payoff for each individual $i$ from each social class $j\in$ \{producer, leader\}\footnote{Ideas for producers alternatives (considering leaders can also produce, technically): plebeians, civilians, citizens} as:
 
 \begin{equation}
 \pi_{i,j}=\delta\cdot(1-x_i)\cdot R_i+\left(1-\delta\right)\left[\kappa\left(R_i\left(1-\bar{x}+x_i\right)-\frac{F}{\kappa\left(1-\delta\right)N}\right)+\left(1-\kappa\right)\cdot(1-x_i)R_i\right] 
@@ -169,7 +199,7 @@ $x$ is the proportion of its own resources an individual is willing to invest in
 
 \subsection{Policing preference}
 
-$y$ is the personal preference of an individual for the proportion of public good that should be dedicated to policing. This trait is initially vertically transmitted in a similar manner as trait $x$, with a probability $d^y$ for direct transmission and $1-d^y$ for socialization by another individual from the parental generation. However, upon reach of adulthood, individuals might be subject to social influence from peers, with elected leaders having more impact than others. Thus there is a probability $d^II$ that the individual is secondarily socialized by a leader or a producer, chosen semi-randomly within the population, with leaders $m$ times more likely to secondarily influence individuals through say, media for instance.  
+$y$ is the personal preference of an individual for the proportion of public good that should be dedicated to policing. This trait is initially vertically transmitted in a similar manner as trait $x$, with a probability $d^y$ for direct transmission and $1-d^y$ for socialization by another individual from the parental generation. However, upon reach of adulthood, individuals might be subject to social influence from peers, with elected leaders having more impact than others. Thus there is a probability $d^{\text{II}}$ that the individual is secondarily socialized by a leader or a producer, chosen semi-randomly within the population, with leaders $m$ times more likely to secondarily influence individuals through say, media for instance.  
 
 \begin{figure}[!htbp]
 	\centering
@@ -208,13 +238,26 @@ Where $\Pi_j=\sum_{i=1}^{n_j}\pi_{i,j}$. Individual final resources determine li
 
 \begin{equation}
 \begin{cases}
-W_{i,L}=\frac{r_L+\pi_{i,L}+\frac{\alpha\Pi_P}{n_L}}{1+\gamma_L n_L}\\
-W_{i,P}=\frac{r_P+(1-\alpha)\pi_{i,P}}{1+\gamma_P n_P}
+w_{i,L}=\frac{r_L+\pi_{i,L}+\frac{\alpha\Pi_P}{n_L}}{1+\gamma_L n_L}\\
+w_{i,P}=\frac{r_P+(1-\alpha)\pi_{i,P}}{1+\gamma_P n_P}
 \end{cases}
 \end{equation}
 
-$r_L$ and $r_P$ correspond to the basic resources of each class, in absence of intra-class competition ($\gamma_j=0$).
+Where $r_L$ and $r_P$ correspond to the basic resources an individual should have access to each class, in absence of intra-class competition ($\gamma_j=0$).
 
+\section{Base average fitness}
+
+The base average fitness at generation $t$, $\overline{w_0}$, is an information accessible to the next generation $t+1$. It corresponds to an estimate of the fitness of individuals at generation $t$, calculated over the whole population, were the social group to be acephalous at this period of time, \textit{i.e.} $\lambda_t=n_L^t=0$. The crucial variable in calculating $\overline{w_0}$ is $\chi$. As I want to know the effect of leadership absence on average fitness, I can write:
+
+\begin{equation}
+	\chi_0=\phi(N^t,\sigma_{X_t},0)
+\end{equation}
+
+From this, the whole dynamic of collective action can be deduced, and $w_0$ estimated. I then have:
+
+\begin{equation}
+	\Delta\bar{w}=\frac{w_{i,L}\cdot n_L+w_{i,P}\cdot n_P}{2}-\overline{w_0}
+\end{equation}
 %\bibliographystyle{plain}
 %\bibliography{bibliography.bib}
 \end{document}
