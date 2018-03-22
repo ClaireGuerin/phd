@@ -59,10 +59,10 @@ The total population size $N^t$ amounts to the number of leaders and producers a
 	\end{cases}
 \end{equation}
 
-Were $w$ corresponds to fitness estimated by lifetime reproductive success. $\lambda$ is not constant but a variable that changes over time. Indeed, I assume that the proportion of leaders in the population are an informed choice from the people based on leadership efficiency in the direct previous generation (parental, fig. \ref{fig:lambda}) \footnote{NB: here the figure implies that if there no increase in fitness as a consequence of leadership, half of the population will be elected in the next generation, which is unlikely: function parameters obviously need to be tuned, and the graph is uniquely shown for illustrative purposes, which stands true for every figure in this document.}. Leadership efficiency is accurately estimated by $\Delta\bar{w}$, the difference between realized average fitness of parents, $\bar{w_\text{eff}}$, and predicted mean reproductive success in the absence of leaders, $\bar{w_0}$ \footnote{I feel like there should be some kind of correction in this formula, but how exactly?}. Both information are supposed to be accessible to the population. $\Delta\bar{w}$ can be viewed as the popular degree of satisfaction with regards to leadership efficiency, and is formalized as:
+Were $w$ corresponds to fitness estimated by lifetime reproductive success. $\lambda$ is not constant but a variable that changes over time. Indeed, I assume that the proportion of leaders in the population are an informed choice from the people based on leadership efficiency in the direct previous generation (parental, fig. \ref{fig:lambda}) \footnote{NB: Function parameters if the figure obviously need to be tuned, since the graph is uniquely shown for illustrative purposes, which stands true for every figure in this document.}. Leadership efficiency is accurately estimated by $\Delta\bar{w}$, the difference between realized average fitness of parents, $\bar{w_\text{eff}}$, and predicted mean reproductive success in the absence of leaders, $\bar{w}_0$ \footnote{I feel like there should be some kind of correction in this formula, but how exactly?}. Both information are supposed to be accessible to the population. $\Delta\bar{w}$ can be viewed as the popular degree of satisfaction with regards to leadership efficiency, and is formalized as:
 
 \begin{equation}
-	\Delta\bar{w}=\overline{w_\text{eff}}-\overline{w_0}
+	\Delta\bar{w}=\bar{w}_\text{eff}-\bar{w}_0
 \end{equation}   
 
 \begin{figure}[!htbp]
@@ -70,9 +70,9 @@ Were $w$ corresponds to fitness estimated by lifetime reproductive success. $\la
 		\begin{tikzpicture}
 		\draw[domain=-4:4, color=lightgray, thick] plot (\x,{2/(1+exp(-\x))}); 
 		\draw [thick, ->] (-4,0) -- (4,0) node [right] {$\Delta \bar{w}$};
-		\draw [thick, ->] (0,0) -- (0,2.5) node [above] {$\lambda^{t+1}$};
+		\draw [thick, ->] (-2,0) -- (-2,2.5) node [above] {$\lambda^{t+1}$};
 		\draw [dashed] (-4,2) -- (4,2) node[pos=0.47, above] {$1$};
-		\node at (0,2) {\textbullet};
+		\node at (-2,2) {\textbullet};
 		\end{tikzpicture}
 	\end{center}
 	\caption{Increasing proportion of elected leaders in the population as average fitness increases as a consequence of leadership.}
@@ -247,16 +247,16 @@ Where $r_L$ and $r_P$ correspond to the basic resources an individual should hav
 
 \section{Base average fitness}
 
-The base average fitness at generation $t$, $\overline{w_0}$, is an information accessible to the next generation $t+1$. It corresponds to an estimate of the fitness of individuals at generation $t$, calculated over the whole population, were the social group to be acephalous at this period of time, \textit{i.e.} $\lambda_t=n_L^t=0$. The crucial variable in calculating $\overline{w_0}$ is $\chi$. As I want to know the effect of leadership absence on average fitness, I can write:
+The base average fitness at generation $t$, $\bar{w}_0$, is an information accessible to the next generation $t+1$. It corresponds to an estimate of the fitness of individuals at generation $t$, calculated over the whole population, were the social group to be acephalous at this period of time, \textit{i.e.} $\lambda_t=n_L^t=0$. The crucial variable in calculating $\bar{w}_0$ is $\chi$. As I want to know the effect of leadership absence on average fitness, I can write:
 
 \begin{equation}
 	\chi_0=\phi(N^t,\sigma_{X_t},0)
 \end{equation}
 
-From this, the whole dynamic of collective action can be deduced, and $w_0$ estimated. I then have:
+From this, the complete dynamic of acephalous collective action can be deduced, and $\bar{w}_0$ estimated. I then have:
 
 \begin{equation}
-	\Delta\bar{w}=\frac{w_{i,L}\cdot n_L+w_{i,P}\cdot n_P}{2}-\overline{w_0}
+	\Delta\bar{w}=\frac{w_{i,L}\cdot n_L+w_{i,P}\cdot n_P}{2}-\bar{w}_0
 \end{equation}
 %\bibliographystyle{plain}
 %\bibliography{bibliography.bib}
